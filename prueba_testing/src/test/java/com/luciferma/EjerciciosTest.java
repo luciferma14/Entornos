@@ -27,8 +27,21 @@ public class EjerciciosTest {
     }
 
     @Test
-    public void testMedia(){
+    public void testAverage(){
         Ejercicios ej = new Ejercicios();
         assertEquals(2.5, ej.average(new int[] {1,2,3,4}), 0.01);
+    }
+
+    @Test
+    public void testbinarySearch(){
+        Ejercicios ej = new Ejercicios();
+        assertTrue(0 <= ej.binarySearch(new int[] {1,2,3,4}, 4));
+        assertFalse(-1 <= ej.binarySearch(new int[] {1,2,3,4}, 1));
+    }
+
+    @Test
+    public void testCelsiusToFahrenheit(){
+        Ejercicios ej = new Ejercicios();
+
     }
 }
