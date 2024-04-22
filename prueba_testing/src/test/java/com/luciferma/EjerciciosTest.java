@@ -25,4 +25,10 @@ public class EjerciciosTest {
         assertArrayEquals(new int [] {-1,0,7}, ej.sort(new int [] {0,7,-1}));
         assertArrayEquals(new int [] {-5,-3,-1}, ej.sort(new int [] {-5,-1,-3})); //negativos
     }
+
+    @Test
+    public void testMedia(){
+        Ejercicios ej = new Ejercicios();
+        assertEquals(2.5, ej.average(new int[] {1,2,3,4}), 0.01);
+    }
 }
