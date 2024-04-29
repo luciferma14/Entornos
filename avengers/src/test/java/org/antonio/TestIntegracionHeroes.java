@@ -1,4 +1,4 @@
-package org.antonio;
+package test.java.org.antonio;
 
 import org.junit.Before;
 import org.junit.Test;
