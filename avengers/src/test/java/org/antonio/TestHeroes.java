@@ -1,5 +1,6 @@
 package org.antonio;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -30,7 +31,10 @@ public class TestHeroes {
     @Test
     public void testGettersHeroes() {
 
-
+        assertEquals("Iron Man", ironman.getNombre());
+        assertEquals("Traje de alta tecnología", ironman.g
+        assertNotEquals("Capitan América", ironman.getNombre());
+    
     }
 
     @Test

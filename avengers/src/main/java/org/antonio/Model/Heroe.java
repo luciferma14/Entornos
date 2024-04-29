@@ -23,15 +23,15 @@ public class Heroe {
         return biografia;
     }
 
-    public vois setNombre(){
+    public vois setNombre(String s){
         this.nombre = nombre;
     }
 
-    public void setSuperpoderes(){
+    public void setSuperpoderes(String treparYArañar){
         this.superpoderes = superpoderes;
     }
 
-    public void setBiografia(){
+    public void setBiografia(String esLaAmigaDeBatman){
         this.biografia = biografia;
     
 }
