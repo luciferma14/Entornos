@@ -27,5 +27,18 @@ public class GestorHeroes {
 
     public Heroe[] getHeroes() {
         return this.heroes.toArray(new Heroe[0]);
+    }   
+
+    public Heroe buscarHeroePorSuperpoder(String superpoder){
+        for(Heroe heroe : this.heroes){
+            if(heroe.getSuperpoderes().contains(superpoder)){
+                return heroe;
+            }
+        }
+    }
+
+    public Heroe actualizarHeroe(Heroe heroe){
+        
+        
     }
 }

@@ -8,14 +8,13 @@ import static org.junit.Assert.*;
 import org.antonio.Model.GestorHeroes;
 import org.antonio.Model.Heroe;
 
-public class TestHeroes {
+public class TestIntegracionHeroes {
 
     Heroe ironman = new Heroe(null, null, null);
     Heroe spiderman = new Heroe(null, null, null);
     Heroe capitanAmerica = new Heroe(null, null, null);
 
     GestorHeroes gh = null;
-
 
     @Before
     public void setUp(){
@@ -28,27 +27,23 @@ public class TestHeroes {
         gh.agregarHeroe(spiderman);
         gh.agregarHeroe(capitanAmerica);
     }
-
+    
     @Test
-    public void testGettersHeroes() {
+    public void testAgregarHeroe(){
+        Heroe batman = new Heroe ("Batman", "Dinero","Dueño del Batmovil");
+        Heroe hulk = new Heroe ("Hulk", "Aplatar","Es el más grande y fuerte");
 
-        assertEquals("Iron Man", ironman.getNombre());
-        assertEquals("Traje de alta tecnología", ironman.getSuperpoderes());
-        assertNotEquals("Capitan América", ironman.getNombre());
-    }
+        gh = new GestorHeroes();
+        gh.agregarHeroe(batman);
+        gh.agregarHeroe(hulk);
 
-    @Test
-    public void testSettersHeroes(){
+ 
+        assertEquals("Batman", batman.getNombre());
+        assertEquals("Hulk", hulk.getNombre());
+        assertEquals("Aplastar", hulk.getSuperpoderes());
+        assertEquals("Dinero", batman.getSuperpoderes());
+        assertNotEquals("Hulk", batman.getNombre());
+        assertNotEquals("Aplastar", batman.getSuperpoderes());
 
-        Heroe catWoman = new Heroe(null, null, null);
-        catWoman.setNombre("Cat-Woman");
-        catWoman.setSuperpoderes("Trepar y arañar");
-        catWoman.setBiografia("Es la amiga de Batman");
-
-        assertEquals("Cat-Woman", catWoman.getNombre());
-        assertEquals("Terpar y arañar", catWoman.getSuperpoderes());
-        assertEquals("Es la amiga de Batman", catWoman.getBiografia());
-
-        assertNotEquals("Capitan América", catWoman.getNombre());
     }
 }
