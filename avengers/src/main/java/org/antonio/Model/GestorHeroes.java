@@ -24,4 +24,8 @@ public class GestorHeroes {
         }
         throw new HeroeNoEncontradoException(nombre);
     }
+
+    public Heroe[] getHeroes() {
+        return this.heroes.toArray(new Heroe[0]);
+    }
 }
