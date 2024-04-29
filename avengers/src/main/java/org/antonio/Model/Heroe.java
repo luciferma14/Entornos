@@ -22,4 +22,16 @@ public class Heroe {
     public String getBiografia() {
         return biografia;
     }
+
+    public vois setNombre(){
+        this.nombre = nombre;
+    }
+
+    public void setSuperpoderes(){
+        this.superpoderes = superpoderes;
+    }
+
+    public void setBiografia(){
+        this.biografia = biografia;
+    
 }
