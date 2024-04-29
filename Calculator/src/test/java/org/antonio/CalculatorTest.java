@@ -25,10 +25,10 @@ public class CalculatorTest {
     @Test
     public void testMultily(){
         Calculator calculator = new Calculator();
-        int result = calculator.multiply(2, 3);
+        float result = calculator.multiply(2, 3);
 
-        assertEquals(6, result);
-        assertNotEquals(3, result);
+        assertEquals(6, result, 0.01);
+        assertNotEquals(3, result, 0.01);
     }
 
     @Test
@@ -42,7 +42,7 @@ public class CalculatorTest {
 
     @Test(expected = IllegalArgumentException.class)
     public void testDivideByZero(){
-        Calculator calculator = new Calculator();
+        Calculator calculator = new Calculator();   
         calculator.divide(4, 0);
     }
 }

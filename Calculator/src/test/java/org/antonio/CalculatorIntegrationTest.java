@@ -37,20 +37,17 @@ public class CalculatorIntegrationTest {
     @Test 
     public void testMultilyAndDivide(){
         Calculator calculator = new Calculator();
-        int result = calculator.multiply(4, 5);
-        float result2 = calculator.divide(10, 2);
-
-        assertEquals(20, result, 0.01);
-        assertNotEquals(40, result, 0.01);
-
-        assertEquals(5, result2, 0.01);
-        assertNotEquals(80, result2, 0.01);
+        
+        assertEquals(4.0, calculator.multiply(2, calculator.divide(4, 2)), 0.01);
+    
+        assertNotEquals(5.0, calculator.multiply(5, calculator.divide(3, 2)), 0.01);
+        assertNotEquals(80, calculator.multiply(2, calculator.divide(4, 2)), 0.01);
     }
 
     @Test
     public void testMultiplyWithZero(){
         Calculator calculator = new Calculator();
-        int result = calculator.multiply(5, 0);
+        float result = calculator.multiply(5, 0);
 
         assertEquals(0, result, 0.01);
         assertNotEquals(10, result, 0.01);
