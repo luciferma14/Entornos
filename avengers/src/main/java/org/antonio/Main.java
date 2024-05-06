@@ -9,11 +9,11 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         GestorHeroes gestorHeroes = new GestorHeroes();
-
+        
         // Agregamos algunos héroes
-        gestorHeroes.agregarHeroe(new Heroe("Iron Man", "Traje de alta tecnología", "Millonario y filántropo"));
-        gestorHeroes.agregarHeroe(new Heroe("Spider-Man", "Sentido arácnido, trepador", "Tímido estudiante de secundaria"));
-        gestorHeroes.agregarHeroe(new Heroe("Capitán América", "Superfuerza, agilidad, resistencia", "Soldado de la Segunda Guerra Mundial"));
+        gestorHeroes.agregarHeroe(new Heroe("Iron Man", "Traje de alta tecnología", "Millonario y filántropo","Hecho de hierro"));
+        gestorHeroes.agregarHeroe(new Heroe("Spider-Man", "Sentido arácnido, trepador", "Tímido estudiante de secundaria","Es una araña"));
+        gestorHeroes.agregarHeroe(new Heroe("Capitán América", "Superfuerza, agilidad, resistencia", "Soldado de la Segunda Guerra Mundial","Es un humano"));
 
         // Pedimos al usuario que seleccione un héroe
         Scanner scanner = new Scanner(System.in);

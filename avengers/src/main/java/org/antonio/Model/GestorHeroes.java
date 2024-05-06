@@ -35,10 +35,49 @@ public class GestorHeroes {
                 return heroe;
             }
         }
+        return null;
     }
 
-    public Heroe actualizarHeroe(Heroe heroe){
-        
-        
+    public void actualizarHeroe(Heroe heroeActualizado) throws HeroeNoEncontradoException{
+        for (Heroe heroe : this.heroes){
+            if (heroe.getNombre().equals(heroeActualizado.getNombre())){
+                heroe.setSuperpoderes(heroeActualizado.getSuperpoderes());
+                heroe.setBiografia(heroeActualizado.getBiografia());
+                heroe.setDescripcion(heroeActualizado.getDescripcion());
+
+                return;
+            }
+        }
+        throw new HeroeNoEncontradoException(heroeActualizado.getNombre());
+    }
+
+    public String listarHeroes(){
+        List<String> nombres = new ArrayList<String>();
+        for (Heroe heroe : this.heroes){
+            nombres.add(heroe.getNombre());
+        }
+
+        return String.join(", ", nombres);
+    }
+
+    public void eliminarHeroe(String nombre)throws HeroeNoEncontradoException{
+        for (Heroe heroe : this.heroes){
+            if(heroe.getNombre().equals(nombre)){
+                this.heroes.remove(heroe);
+                return;
+            }
+        }
+        throw new HeroeNoEncontradoException(nombre);
+    }
+
+    public List<Heroe> listarHeroesPorSuperpoderes(String superpoder){
+        List<Heroe> heroesConSuperpoderes = new ArrayList<Heroe>();
+
+        for (Heroe heroe : this.heroes){
+            if (heroe.getSuperpoderes().toLowerCase().contains(superpoder)){
+                heroesConSuperpoderes.add(heroe);
+            }
+        }
+        return heroesConSuperpoderes;
     }
 }
