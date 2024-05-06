@@ -12,8 +12,8 @@ import org.antonio.Model.Heroe;
 public class TestFuncionalHeroes {
     
     Heroe ironman = new Heroe(null, null, null);
-    Heroe Spiderman = new Heroe(null, null, null);
-    Heroe CapitanAmerica = new Heroe(null, null, null);
+    Heroe spiderman = new Heroe(null, null, null);
+    Heroe capitanAmerica = new Heroe(null, null, null);
 
     GestorHeroes gh = null;
 
@@ -34,7 +34,7 @@ public class TestFuncionalHeroes {
     public void testProgramaCompl() throws HeroeNoEncontradoException {
 
         Heroe batman = new Heroe ("Batman", "Dinero","Dueño del Batmovil");
-        Heroe Hulk = new Heroe ("Hulk", "Aplatar","Es el más grande y fuerte");
+        Heroe hulk = new Heroe ("Hulk", "Aplatar","Es el más grande y fuerte");
 
         gh = new GestorHeroes();
         gh.agregarHeroe(batman);
