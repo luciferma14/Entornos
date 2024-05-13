@@ -13,6 +13,14 @@ public class Fruta {
         return nombre;
     }
 
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setEsDeliciosa(boolean esDeliciosa) {
+        this.esDeliciosa = esDeliciosa;
+    }
+
     public boolean esDeliciosa() {
         return esDeliciosa;
     }

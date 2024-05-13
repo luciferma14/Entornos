@@ -13,6 +13,14 @@ public class Barco {
         return nombre;
     }
 
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setCapacidad(int capacidad) {
+        this.capacidad = capacidad;
+    }
+
     public int getCapacidad() {
         return capacidad;
     }
