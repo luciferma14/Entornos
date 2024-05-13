@@ -1,11 +1,6 @@
 package org.antonio;
 
 import static org.junit.Assert.*;
-
-import org.antonio.Barco;
-import org.antonio.Fruta;
-import org.antonio.Luffy;
-import org.antonio.Zoro;
 import org.junit.Before;
 import org.junit.Test;
 
