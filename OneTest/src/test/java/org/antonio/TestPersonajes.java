@@ -1,4 +1,4 @@
-package test.java.org.antonio;
+package org.antonio;
 
 import static org.junit.Assert.*;
 
