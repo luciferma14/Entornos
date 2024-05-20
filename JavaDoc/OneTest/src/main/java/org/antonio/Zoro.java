@@ -43,9 +43,20 @@ public class Zoro implements Personaje{
      * Método para atacar a otro personaje
      * @param enemigo personaje que va a recibir el daño
      * @see #recibirDanio(int)
+     * @deprecated Reemplazado por {@link #atacar2()}.
      * @since 1.0
      */
+    @Deprecated
     public void atacar(Personaje enemigo) {
+        enemigo.recibirDanio(poder);
+    }
+
+    /**
+     * Método para atacar a otro personaje
+     * @param enemigo personaje que va a recibir el daño
+     * @see #recibirDanio(int)
+     */
+    public void atacar2(Personaje enemigo) {
         enemigo.recibirDanio(poder);
     }
 
