@@ -34,7 +34,7 @@ public class TestFuncionalHeroes {
     public void testProgramaCompl() throws HeroeNoEncontradoException {
 
         Heroe batman = new Heroe ("Batman", "Dinero","Dueño del Batmovil","Es el mejor");
-        Heroe hulk = new Heroe ("Hulk", "Aplatar","Es el más grande y fuerte", "Es verde");
+        Heroe hulk = new Heroe ("Hulk", "Aplastar","Es el más grande y fuerte", "Es verde");
 
         gh = new GestorHeroes();
         gh.agregarHeroe(batman);
