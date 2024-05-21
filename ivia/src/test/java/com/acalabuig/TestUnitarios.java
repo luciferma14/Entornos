@@ -104,7 +104,5 @@ public class TestUnitarios {
         assertEquals(913.5, antonio.getSalario(), 0.01);
         assertNotEquals(1000, lucia.getSalario(), 0.01);
         assertNotEquals(9102, antonio.getSalario(), 0.01);
-        
-
     }
 }
