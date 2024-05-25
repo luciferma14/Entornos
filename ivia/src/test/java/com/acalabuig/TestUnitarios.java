@@ -17,7 +17,6 @@ public class TestUnitarios {
     Maquinaria tractor = new Maquinaria("Camión", 10, 80);
     Producto cereales = new Producto("Cereales", 10);
 
-    // da error si lo hago directamente en el setUp
 
     @Before
     public void setUp(){
@@ -167,9 +166,53 @@ public class TestUnitarios {
         assertNotEquals("Tractor", segadora.getTipo());
     }
 
-    @Test
+    @Test (expected = IllegalArgumentException.class)
     public void testHorasUsoNoNegativo(){
+        Maquinaria tractor = new Maquinaria("Tractor", 0, 80);
+        Maquinaria segadora = new Maquinaria("Segadora", -15, 37);
 
-        
+        assertEquals(10, tractor.getHoraUso(), 0.01);
+        assertEquals(13, segadora.getHoraUso(), 0.01);
+        assertNotEquals(19, tractor.getHoraUso());
+        assertNotEquals(0, segadora.getHoraUso());
+    }
+
+
+    // ----- Producto -----
+
+    @Test
+    public void testCalcularPrecioConDescuento(){
+        Producto cereales = new Producto("Cereales", 5);
+        Producto leche = new Producto("Leche", 3.5);
+
+        double precioCereales = cereales.calcularPrecioConDescuento(2);
+        double precioLeche = leche.calcularPrecioConDescuento(1.5);
+
+        assertEquals(4.9, precioCereales, 0.01);
+        assertEquals(3.4475, precioLeche, 0.01);
+        assertNotEquals(13, precioCereales, 0.01);
+        assertNotEquals(3.5, precioLeche, 0.01);
+    }
+
+    @Test (expected = IllegalArgumentException.class)
+    public void testNombreProductoNoVacio(){
+        Producto cereales = new Producto(null, 5);
+        Producto leche = new Producto(null, 3.5);
+
+        assertEquals("Cereales", cereales.getNombre());
+        assertEquals("Leche", leche.getNombre());
+        assertNotEquals("Leche", cereales.getNombre());
+        assertNotEquals("Cereales", leche.getNombre());
+    }
+
+    @Test (expected = IllegalArgumentException.class)
+    public void testPrecioDebeSerPositivo(){
+        Producto cereales = new Producto("Cereales", -5);
+        Producto leche = new Producto("Leche", -3.5);
+
+        assertEquals(5, cereales.getPrecio(), 0.01);
+        assertEquals(3.5, leche.getPrecio(), 0.01);
+        assertNotEquals(2, cereales.getPrecio());
+        assertNotEquals(0, leche.getPrecio());
     }
 }
