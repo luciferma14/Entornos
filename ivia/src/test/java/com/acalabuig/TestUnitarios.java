@@ -105,4 +105,71 @@ public class TestUnitarios {
         assertNotEquals(1000, lucia.getSalario(), 0.01);
         assertNotEquals(9102, antonio.getSalario(), 0.01);
     }
+
+    @Test (expected = IllegalArgumentException.class)
+    public void testNombreEmpleadoNoVacio(){
+        Empleado lucia = new Empleado(null, "Regar", 900);
+        Empleado antonio = new Empleado(null, "Cultivar", 800);
+
+        assertEquals("Lucia", lucia.getNombre());
+        assertEquals("Antonio", antonio.getNombre());
+        assertNotEquals("Antonio", lucia.getNombre());
+        assertNotEquals("Lucia", antonio.getNombre());
+    }
+
+    @Test (expected = IllegalArgumentException.class)
+    public void testSalarioDebeSerPositivo(){
+        Empleado lucia = new Empleado("Lucia", "Regar", 0);
+        Empleado antonio = new Empleado("Antonio", "Cultivar", -1);
+
+        assertEquals(900, lucia.getSalario(), 0.01);
+        assertEquals(800, antonio.getSalario(), 0.01);
+        assertNotEquals(1200, lucia.getSalario(), 0.01);
+        assertNotEquals(1300, antonio.getSalario(), 0.01);
+    }
+
+    // ----- Maquinaria -----
+
+    @Test
+    public void testCalcularTiempoArado(){
+        Maquinaria tractor = new Maquinaria("Tractor", 40, 80);
+        Maquinaria segadora = new Maquinaria("Segadora", 15, 37);
+
+        double tiempoTractor = tractor.calcularTiempoArado(12);
+        double tiempoSegadora = segadora.calcularTiempoArado(7);
+
+        assertEquals(0.15, tiempoTractor, 0.01);
+        assertEquals(0.1891891891891892, tiempoSegadora, 0.01);
+        assertNotEquals(90, tiempoTractor, 0.01);
+        assertNotEquals(0.1, tiempoSegadora, 0.01);
+    }
+
+    @Test
+    public void testAnyadirHorasTrabajo(){
+        Maquinaria tractor = new Maquinaria("Tractor", 40, 80);
+        Maquinaria segadora = new Maquinaria("Segadora", 15, 37);
+
+        tractor.anyadirHorasTrabajo(10);
+        segadora.anyadirHorasTrabajo(20);
+
+        assertEquals(50, tractor.getHoraUso(), 0.01);
+        assertEquals(35, segadora.getHoraUso(), 0.01);
+    }
+
+    @Test (expected = IllegalArgumentException.class)
+    public void testTipoMaquinariaNoVacio(){
+        Maquinaria tractor = new Maquinaria(null, 40, 80);
+        Maquinaria segadora = new Maquinaria(null, 15, 37);
+
+        assertEquals("Tractor", tractor.getTipo());
+        assertEquals("Segadora", segadora.getTipo());
+        assertNotEquals("Segadora", tractor.getTipo());
+        assertNotEquals("Tractor", segadora.getTipo());
+    }
+
+    @Test
+    public void testHorasUsoNoNegativo(){
+
+        
+    }
 }
